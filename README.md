@@ -41,7 +41,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |group|string|null: false, unique: true|
-|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :groups_users
@@ -63,7 +62,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |image|text||
 |user_id|integer|null: false, foreign_key: true|
 |grope_id|integer|null: false, foreign_key: true|
