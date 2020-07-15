@@ -1,0 +1,23 @@
+.SideBar
+  .SideHead
+    .UserName
+      .UserName__left
+        name
+      .UserName__right
+        = link_to "#", class: 'UserName__right--edit' do
+          = icon('far', 'edit')
+          %span<>
+        = link_to "#", class: 'UserName__right--cog' do
+          = icon('fas', 'cog')
+
+  .Chatlist
+    .Chatgroup
+      .ChatTitle
+        techcamp
+      .ChatMessage
+        まだメッセージがありません
+    .Chatgroup
+      .ChatTitle
+        techcamp
+      .ChatMessage
+        まだメッセージがありません

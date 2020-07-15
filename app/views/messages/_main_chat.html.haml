@@ -1,0 +1,35 @@
+.MainChat
+  .ChatHeader
+    .ChatContent
+      %p.ChatContent__title
+        test
+      %p.ChatContent__member
+        Member : masa
+    .Edit
+      = link_to '#', class: "Edit--icon" do
+        Edit
+
+  .Messagesdisplay
+    .Sender
+      .Sender__name
+        masa
+      .Sender__date
+        2020/01/01(Wed) 00:00:00
+    .ChatMessage
+      おはよう！
+    .Sender
+      .Sender__name
+        masa
+      .Sender__date
+        2020/01/01(Wed) 00:00:00
+    .ChatMessage
+      おはよう！
+
+  .Footer
+    .Form
+      .Input
+        %input.Input__message{ type: 'input', value: 'type a message'}
+        %label{class: "Input__image"}
+          = icon('fas', 'image')
+          %input.hidden{type: "file"}
+      %input.Send{ type: 'submit', value: 'Send'}
