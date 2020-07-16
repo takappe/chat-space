@@ -2,13 +2,14 @@
   .SideHead
     .UserName
       .UserName__left
-        name
+        =current_user.name
       .UserName__right
         = link_to "#", class: 'UserName__right--edit' do
           = icon('far', 'edit')
           %span<>
         = link_to "#", class: 'UserName__right--cog' do
-          = icon('fas', 'cog')
+          =link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: "UserName__right--cog")
 
   .Chatlist
     .Chatgroup
