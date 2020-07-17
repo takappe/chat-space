@@ -4,21 +4,17 @@
       .UserName__left
         =current_user.name
       .UserName__right
-        = link_to "#", class: 'UserName__right--edit' do
-          = icon('far', 'edit')
+        = link_to new_group_path, class: 'UserName__right--edit' do
+          = icon('far', 'edit', class: "UserName__right--edit")
           %span<>
-        = link_to "#", class: 'UserName__right--cog' do
-          =link_to edit_user_path(current_user) do
-            = icon('fas', 'cog', class: "UserName__right--cog")
+        = link_to edit_user_path(current_user), class: 'UserName__right--cog' do
+          = icon('fas', 'cog', class: "UserName__right--cog")
 
   .Chatlist
-    .Chatgroup
-      .ChatTitle
-        techcamp
-      .ChatMessage
-        まだメッセージがありません
-    .Chatgroup
-      .ChatTitle
-        techcamp
-      .ChatMessage
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .Chatgroup
+        = link_to '#', class: 'Chatgroup__link' do
+          .ChatTitle
+            = group.name
+          .ChatMessage
+            まだメッセージがありません

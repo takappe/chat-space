@@ -59,17 +59,21 @@
       .Chatgroup {
         position: relative;
         padding: 20px 20px 40px;
-        @include TextWhite();
 
-        .ChatTitle {
-          font-size: 15px;
-          position: absolute;
-          padding-bottom: 5px;
-          position: relative;
-        }
+        &__link {
+          text-decoration: none;
+          @include TextWhite();
+        
+          .ChatTitle {
+            font-size: 15px;
+            position: absolute;
+            padding-bottom: 5px;
+            position: relative;
+          }
 
-        .ChatMessage {
-          font-size: 11px;
+          .ChatMessage {
+            font-size: 11px;
+          }
         }
       }
     }
