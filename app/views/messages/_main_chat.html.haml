@@ -2,34 +2,24 @@
   .ChatHeader
     .ChatContent
       %p.ChatContent__title
-        test
-      %p.ChatContent__member
-        Member : masa
+        = @group.name
+      .ChatContent__member
+        %P Member :
+        - @group.users.each do |user|
+          = user.name
+
     .Edit
-      = link_to '#', class: "Edit--icon" do
+      = link_to edit_group_path(@group), class: "Edit--icon" do
         Edit
 
   .Messagesdisplay
-    .Sender
-      .Sender__name
-        masa
-      .Sender__date
-        2020/01/01(Wed) 00:00:00
-    .ChatMessage
-      おはよう！
-    .Sender
-      .Sender__name
-        masa
-      .Sender__date
-        2020/01/01(Wed) 00:00:00
-    .ChatMessage
-      おはよう！
-
+    = render @messages
+ 
   .Footer
-    .Form
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Input
-        %input.Input__message{ type: 'input', value: 'type a message'}
-        %label{class: "Input__image"}
-          = icon('fas', 'image')
-          %input.hidden{type: "file"}
-      %input.Send{ type: 'submit', value: 'Send'}
+        = f.text_field :content, class: 'Input__message', placeholder: 'type a message'
+        = f.label :image, class: 'Input__image' do
+          = icon('far', 'image')
+          = f.file_field :image, class: 'Input__image__icon'
+      = f.submit 'Send', class: 'Input__send'  
