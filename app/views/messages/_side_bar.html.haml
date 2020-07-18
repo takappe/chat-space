@@ -2,7 +2,7 @@
   .SideHead
     .UserName
       .UserName__left
-        =current_user.name
+        = current_user.name
       .UserName__right
         = link_to new_group_path, class: 'UserName__right--edit' do
           = icon('far', 'edit', class: "UserName__right--edit")
@@ -13,8 +13,8 @@
   .Chatlist
     - current_user.groups.each do |group|
       .Chatgroup
-        = link_to '#', class: 'Chatgroup__link' do
+        = link_to group_messages_path(group), class: 'Chatgroup__link' do
           .ChatTitle
             = group.name
           .ChatMessage
-            まだメッセージがありません
+            = group.show_last_message
