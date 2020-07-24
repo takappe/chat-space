@@ -1,34 +1,39 @@
 $(function() {
+
   function buildHTML(message){
     if( message.image ) {
       let html =
-        `<div class="Sender">
-          <div class="Sender__name">
-            ${message.user_name}
+        `<div class="MessageBOX" data-message-id=${message.id}>
+          <div class="Sender">
+            <div class="Sender__name">
+              ${message.user_name}
+            </div>
+            <div class="Sender__date">
+              ${message.created_at}
+            </div>
           </div>
-          <div class="Sender__date">
-            ${message.created_at}
-          </div>
-        </div>
-        <div class="ChatMessage">
-          <div class="Message__content">
-            ${message.content}
-          </div>
-        <img class="Message__image" src="${message.image}">`
+          <div class="ChatMessage">
+            <div class="Message__content">
+              ${message.content}
+            </div>
+          <img class="Message__image" src="${message.image}">
+        </div>`
       return html;
     } else {
       let html =
-        `<div class="Sender">
-          <div class="Sender__name">
-            ${message.user_name}
+        `<div class="MessageBOX" data-message-id=${message.id}>
+          <div class="Sender">
+            <div class="Sender__name">
+              ${message.user_name}
+            </div>
+            <div class="Sender__date">
+              ${message.created_at}
+            </div>
           </div>
-          <div class="Sender__date">
-            ${message.created_at}
-          </div>
-        </div>
-        <div class="ChatMessage">
-          <div class="Message__content">
-            ${message.content}
+          <div class="ChatMessage">
+            <div class="Message__content">
+              ${message.content}
+            </div>
           </div>
         </div>`
         return html;
